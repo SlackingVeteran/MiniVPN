@@ -44,7 +44,7 @@ struct ipheader {
 #define BUFF_SIZE 2000
 
 #define CHK_ERR(err,s) if ((err)==-1) { perror(s); exit(1); }
-#define tunip_addr "192.168.53"
+#define tunip_addr "192.168.59"
 
 typedef struct Entry {
   char *key;
@@ -127,7 +127,7 @@ int Dictionary_get(Dictionary *d, char *key) {
   for (Entry *i = d->table[hash]; i; i = i->next) {
     if (strcmp(key, i->key) == 0) return i->pipeFd;
   }
-  return NULL;
+  return 0;
 }
 //Dictionary *d = Dictionary_new();
 
@@ -362,8 +362,8 @@ int main(int argc, char * argv[]) {
   }
 
   // Step 2: Set up the server certificate and private key
-  SSL_CTX_use_certificate_file(ctx, "./cert_server/hbandaru_cert.pem", SSL_FILETYPE_PEM)
-  SSL_CTX_use_PrivateKey_file(ctx, "./cert_server/hbandaru_key.pem", SSL_FILETYPE_PEM)
+  SSL_CTX_use_certificate_file(ctx, "./cert_server/slackingveteran_cert.pem", SSL_FILETYPE_PEM);
+  SSL_CTX_use_PrivateKey_file(ctx, "./cert_server/slackingveteran_key.pem", SSL_FILETYPE_PEM);
 
   //------< Creating the socket interface >-------
   if ((tunfd = createTunDevice()) < 0) {
