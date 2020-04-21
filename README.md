@@ -1,5 +1,5 @@
 # MiniVPN
-VPN with MultiClient Support
+VPN with MultiClient and Authentication Support
 
 --------------------------
 To run the server: 
