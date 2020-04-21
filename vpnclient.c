@@ -20,7 +20,7 @@
 
 #define BUFF_SIZE 2000
 #define PORT_NUMBER 4433
-#define SERVER_IP "10.0.2.5"
+#define SERVER_IP "10.0.2.17"
 struct sockaddr_in peerAddr;
 
 //-------------< Verify Call back >---------------
@@ -185,7 +185,6 @@ SSL* setupTLSClient(const char* hostname){
 }
 
 int main(int argc, char *argv[]) {
-  printf("Hello");
   char *hostname = "hello.com";
   int port = 443, clientAuth;
   if (argc > 1) hostname = argv[1];
