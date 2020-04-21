@@ -16,7 +16,7 @@
 #include <termios.h>
 
 #define CHK_SSL(err) if((err) < 1) {ERR_print_errors_fp(stderr); printf("Error detected");exit(2);}
-#define CA_DIR "./CA_DIR"
+#define CA_DIR "./ca_client"
 
 #define BUFF_SIZE 2000
 #define PORT_NUMBER 4433
@@ -172,7 +172,7 @@ SSL* setupTLSClient(const char* hostname){
   ctx = SSL_CTX_new(meth);
 
   SSL_CTX_set_verify(ctx, SSL_VERIFY_PEER,NULL);
-  if (SSL_CTX_load_verify_locations(ctx, NULL, "./ca_client") < 1) {
+  if (SSL_CTX_load_verify_locations(ctx, NULL, CA_DIR) < 1) {
     printf("Error setting the verify locations. \n");
     exit(0);
   }
