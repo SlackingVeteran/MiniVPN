@@ -6,9 +6,10 @@ Directory setup for keys
 --------------------------
 * `mkdir cert_server`
 * `cd cert_server`
-* `mkdir DemoCA/newcerts`
-* `touch DemoCA/index.txt DemoCA/serial`
-* `echo 1000 > DemoCA/serial`
+* `mkdir demoCA`
+* `mkdir demoCA/newcerts`
+* `touch demoCA/index.txt demoCA/serial`
+* `echo 1000 > demoCA/serial`
 
 --------------------------
 Creating pair of keys for CA using "openssl":
